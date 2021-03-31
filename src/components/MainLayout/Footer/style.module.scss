@@ -1,0 +1,25 @@
+.footerBlock {
+  width: 100%;
+  background: #8855DD;
+  margin-top: 50px;
+  padding: 10px 0;
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 300px;
+
+    .footerLogo {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin: 15px 0;
+    }
+
+    p {
+      text-align: center;
+      color: #fff;
+    }
+  }
+}

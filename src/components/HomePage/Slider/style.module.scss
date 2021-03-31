@@ -1,0 +1,21 @@
+.slider {
+  padding-bottom: 50px;
+  div {
+    border-radius: 8px;
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+
+      outline: none;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
