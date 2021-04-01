@@ -15,11 +15,11 @@ export default function Header() {
                 <Container>
                     <div className={style.header}>
                         <div className={style.links}>
-                            <NavLink to={"/"} activeClassName={style.active} className={style.active}>Каталог</NavLink>
-                            <NavLink to={"/"}>О нас</NavLink>
-                            <NavLink to={"/"}>Контакты</NavLink>
-                            <NavLink to={"/"}>Доставка</NavLink>
-                            <NavLink to={"/"}>Оплата</NavLink>
+                            <NavLink exact to={"/"} activeClassName={style.active}>Каталог</NavLink>
+                            <NavLink exact to={"/products"} activeClassName={style.active}>Товары</NavLink>
+                            <NavLink exact to={"/"}>Контакты</NavLink>
+                            <NavLink exact to={"/"}>Доставка</NavLink>
+                            <NavLink exact to={"/"}>Оплата</NavLink>
                         </div>
                         <div className={style.phoneAndWatch}>
                             <p>Доставка с 8:00 до 23:00</p>

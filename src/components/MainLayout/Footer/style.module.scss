@@ -2,13 +2,38 @@
   width: 100%;
   background: #8855DD;
   margin-top: 50px;
-  padding: 10px 0;
+  padding: 50px 0 10px 0;
 
   .footer {
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
-    height: 300px;
+    color: #fff;
+
+    .mapsSite{
+      display: grid;
+      grid-template-columns: 1fr 1fr 3fr 1fr;
+      div{
+        p{
+          margin-bottom: 10px;
+        }
+
+        ul{
+          li{
+            font-weight: 300;
+            margin: 5px 0;
+          }
+        }
+      }
+      .contacts{
+        display: flex;
+        flex-direction: column;
+        font-weight: 300;
+        a{
+          color: #fff;
+          margin: 5px 0;
+        }
+      }
+    }
 
     .footerLogo {
       display: flex;
@@ -17,7 +42,7 @@
       margin: 15px 0;
     }
 
-    p {
+    .security{
       text-align: center;
       color: #fff;
     }
