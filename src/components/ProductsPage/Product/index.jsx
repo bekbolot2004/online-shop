@@ -1,11 +1,31 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import style from './style.module.scss'
 import photo from "../../HomePage/NewProducts/assets/photo.png";
-import basket from "../../HomePage/NewProducts/assets/basket.svg";
+import basketImg from "../../HomePage/NewProducts/assets/basket.svg";
+import {useDispatch} from "react-redux";
 
 
 
 export default function Product({data}) {
+    const [count, setCount] = useState(1)
+    const basket = JSON.parse(window.localStorage.getItem("basket"))
+    const [prodCollector, setProdCollector] = useState(basket ? basket : [])
+    const dispatch = useDispatch()
+    useEffect(() => {
+        prodCollector.length && window.localStorage.setItem("basket", JSON.stringify(prodCollector))
+    }, [prodCollector])
+
+    const prodWithCount = {count: count, ...data}
+    const currentProd = prodCollector.some(p => data.id === p.id)
+
+    const addProdToBasket = () => {
+        setProdCollector(s => currentProd ?
+            s.map(p => p.id === data.id ? {...p, count: (p.count + count)} : p) :
+            [...s, prodWithCount])
+    }
+
+
+
     const [size, setSize] = useState()
     const [color, setColor] = useState()
 
@@ -43,7 +63,7 @@ export default function Product({data}) {
                     {data.discount ? <div><p className={style.discountPrice}>{data.price} сом</p><p>{priceDis} сом</p></div> : <p>{data.price} сом</p> }
                 </div>
                 <div className={style.basketBtn}>
-                    <button>В корзину <img src={basket} alt="basket"/></button>
+                    <button onClick={addProdToBasket}>В корзину <img src={basketImg} alt="basket"/></button>
                 </div>
             </div>
         </>

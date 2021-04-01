@@ -17,9 +17,9 @@ export default function Header() {
                         <div className={style.links}>
                             <NavLink exact to={"/"} activeClassName={style.active}>Каталог</NavLink>
                             <NavLink exact to={"/products"} activeClassName={style.active}>Товары</NavLink>
-                            <NavLink exact to={"/"}>Контакты</NavLink>
-                            <NavLink exact to={"/"}>Доставка</NavLink>
-                            <NavLink exact to={"/"}>Оплата</NavLink>
+                            <NavLink exact to={"/contact"} activeClassName={style.active}>Контакты</NavLink>
+                            <NavLink exact to={"/basket"} activeClassName={style.active}>Корзина и Доставка</NavLink>
+                            <NavLink exact to={"/paymant"} activeClassName={style.active}>Оплата</NavLink>
                         </div>
                         <div className={style.phoneAndWatch}>
                             <p>Доставка с 8:00 до 23:00</p>
@@ -47,10 +47,10 @@ export default function Header() {
                             <button><img src={magnifier} alt="magnifier"/></button>
                         </label>
                         <div className={style.basket}>
-                            <button>
+                            <NavLink exact to={"/basket"}>
                                 <img src={basket} alt="basket"/>
                                 <span className={style.count}>9</span>
-                            </button>
+                            </NavLink>
                         </div>
                     </div>
                 </Container>
