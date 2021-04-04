@@ -135,10 +135,9 @@
       &:before{
         content: "";
         position: absolute;
-        left: 10%;
+        left: 5%;
         top: calc(50% - 1px);
         height: 1px;
-        transform: rotate(7deg);
         width: 80%;
         background: #676767;
       }

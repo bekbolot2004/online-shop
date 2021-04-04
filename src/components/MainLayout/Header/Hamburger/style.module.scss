@@ -1,0 +1,57 @@
+.catalog {
+  margin-right: 30px;
+  position: relative;
+  transition: 0.3s;
+
+  button {
+    background: #8855DD;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 6px 8px;
+    height: 35px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    img {
+      margin-right: 8px;
+    }
+  }
+
+  .hamburger{
+    z-index: 10000;
+    background: #41B3A3;
+    position: absolute;
+    color: #fff;
+    top: 110%;
+    left: 0;
+    border-radius: 5px;
+    padding: 0 5px;
+
+    div{
+      min-width: 150px;
+      margin: 5px 0;
+      p{
+        margin: 0;
+        padding: 0 5px;
+        background: rgba(0,0,0, 0.2);
+        font-size: 16px;
+      }
+    }
+  }
+  .close{
+    div{
+      z-index: 1000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0, 0.25);
+    }
+  }
+
+}
+

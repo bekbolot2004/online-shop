@@ -53,10 +53,10 @@ export default function Product({data}) {
                     <p>{data.name}</p>
                 </div>
                 <div className={style.size}>
-                    {data.size.map(p => <button onClick={() => setSize(p)} style={{border: size === p && "1px solid #8855DD", background: size === p && "#8855DD", color: size === p && "#fff"}}>{p}</button>)}
+                    {data.size.map(p => <button onClick={() => setSize(p)} style={{border: size === p && "2px solid #8855DD"}}>{p}</button>)}
                 </div>
                 <div className={style.colors}>
-                    {data.colors.map(c => <button onClick={() => setColor(c)} style={{border: color === c && "2px solid #8855DD", background: color === c && "#fff"}}><div style={{backgroundColor: colors[c]}}/></button>)}
+                    {data.colors.map(c => <button onClick={() => setColor(c)} style={{border: color === c && "2px solid #8855DD"}}><div style={{backgroundColor: colors[c]}}/></button>)}
                 </div>
                 <div className={style.price}>
 

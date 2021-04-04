@@ -6,6 +6,7 @@ import logo from "./assets/Sonun.svg";
 import catalog from "./assets/catalog.svg";
 import magnifier from "./assets/magnifier.svg";
 import basket from "./assets/basket.svg";
+import HeaderHamburger from "./Hamburger";
 
 
 export default function Header() {
@@ -15,7 +16,7 @@ export default function Header() {
                 <Container>
                     <div className={style.header}>
                         <div className={style.links}>
-                            <NavLink exact to={"/"} activeClassName={style.active}>Каталог</NavLink>
+                            <NavLink exact to={"/"} activeClassName={style.active}>Главная</NavLink>
                             <NavLink exact to={"/products"} activeClassName={style.active}>Товары</NavLink>
                             <NavLink exact to={"/contact"} activeClassName={style.active}>Контакты</NavLink>
                             <NavLink exact to={"/basket"} activeClassName={style.active}>Корзина и Доставка</NavLink>
@@ -36,12 +37,7 @@ export default function Header() {
                                 <img src={logo} alt="logo"/>
                             </NavLink>
                         </div>
-                        <div className={style.catalog}>
-                            <button>
-                                <img src={catalog} alt=""/>
-                                <p>Каталог</p>
-                            </button>
-                        </div>
+                        <HeaderHamburger/>
                         <label htmlFor="" className={style.search}>
                             <input type="text" placeholder={"Поиск..."} />
                             <button><img src={magnifier} alt="magnifier"/></button>

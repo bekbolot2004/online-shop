@@ -4,6 +4,7 @@ import MainLayout from "../MainLayout";
 import basketImg from './assets/basket.svg'
 
 
+
 export default function BasketPage() {
     return (
         <MainLayout>
