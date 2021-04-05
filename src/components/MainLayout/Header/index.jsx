@@ -6,6 +6,7 @@ import logo from "./assets/Sonun.svg";
 import catalog from "./assets/catalog.svg";
 import magnifier from "./assets/magnifier.svg";
 import basket from "./assets/basket.svg";
+import CategoryHeader from "./CategoryHeader";
 
 
 export default function Header() {
@@ -36,12 +37,7 @@ export default function Header() {
                                 <img src={logo} alt="logo"/>
                             </NavLink>
                         </div>
-                        <div className={style.catalog}>
-                            <button>
-                                <img src={catalog} alt=""/>
-                                <p>Каталог</p>
-                            </button>
-                        </div>
+                        <CategoryHeader/>
                         <label htmlFor="" className={style.search}>
                             <input type="text" placeholder={"Поиск..."} />
                             <button><img src={magnifier} alt="magnifier"/></button>

@@ -16,6 +16,8 @@ function App() {
                 <Switch>
                     <Home exact path={"/"}/>
                     <ProductsPage exact path={"/products"}/>
+                    <ProductsPage exact path={"/products/:category"}/>
+                    <ProductsPage exact path={"/products/:category/:subcategory"}/>
                     <BasketPage exact path={"/basket"}/>
                     <ContactPage exact path={"/contact"}/>
                     <PaymantPage exact path={"/paymant"}/>

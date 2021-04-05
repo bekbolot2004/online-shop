@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import style from './style.module.scss'
 import photo from './assets/photo.png'
 import basket from './assets/basket.svg'
-import {productsObj} from "../../ProductsPage/productObj";
+import {productsObj} from "../../../objs/productObj";
 import Product from "../../ProductsPage/Product";
 
 
