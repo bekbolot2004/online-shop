@@ -6,6 +6,7 @@ import ProductsPage from "./components/ProductsPage";
 import BasketPage from "./components/BasketPage";
 import ContactPage from "./components/ContactPage";
 import PaymantPage from "./components/PaymantPage";
+import ProductPage from "./components/ProductsPage/ProductPage";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                     <BasketPage exact path={"/basket"}/>
                     <ContactPage exact path={"/contact"}/>
                     <PaymantPage exact path={"/paymant"}/>
+                    <ProductPage exact path={"/product-page/:id"}/>
                 </Switch>
             </BrowserRouter>
         </>
