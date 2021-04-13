@@ -22,7 +22,7 @@ export const productsObj = [
     size: ["s", 'm', 'l', 'xl'],
     colors: ['red', 'green', 'yellow', 'blue'],
     price: 1400,
-    discount: 50,
+    discount: 0,
     new: false,
   },
   {

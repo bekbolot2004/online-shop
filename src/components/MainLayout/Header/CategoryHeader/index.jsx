@@ -8,7 +8,6 @@ const Category = ({data}) => {
   const [open, setOpen] = useState(false)
 
   const SubCategory = ({data, category}) => {
-    console.log(category)
 
     return(
       <div className={style.subCategory}>

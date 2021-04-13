@@ -1,6 +1,6 @@
-.productPage{
+.productPage {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.7fr;
 
   .photoImgs {
     display: grid;
@@ -39,6 +39,125 @@
         img {
           width: 100%;
           object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .productTxt{
+
+
+
+    .productName{
+      font-size: 2em;
+      font-weight: 600;
+    }
+
+    .moneys{
+      background: rgba(0,0,0, 0.05);
+      padding: 30px 10px 10px 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-content: center;
+      position: relative;
+      border-radius: 4px;
+
+      .discount{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #EF5959;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 7px;
+        border-radius: 4px;
+        p{
+          color: #fff;
+          font-size: 17px;
+          padding: 0;
+          margin: 0;
+          font-weight: 400;
+        }
+      }
+
+      .productPrice{
+        font-size: 30px;
+        font-weight: 600;
+        color: #111;
+        padding: 0;
+        margin: 0;
+
+        span{
+          margin-left: 10px;
+          font-size: 20px;
+          color: rgba(0,0,0,0.4);
+          font-weight: 500;
+          position: relative;
+
+          &:before{
+            content: "";
+            position: absolute;
+            top: calc(50% - 1px);
+            left: 5%;
+            width: 90%;
+            height: 2px;
+            background: rgba(0,0,0,0.4);
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.modalBlock{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .closeModal{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0, 0.25);
+    z-index: -1;
+  }
+
+  .modal{
+    height: 80%;
+    width: 30%;
+    background: #fff;
+    padding: 10px 10px 50px 10px;
+    border-radius: 8px;
+
+    .slider {
+      padding-bottom: 50px;
+      div {
+        border-radius: 8px;
+
+        .item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 8px;
+
+          outline: none;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
         }
       }
     }
