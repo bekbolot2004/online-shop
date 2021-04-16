@@ -1,0 +1,36 @@
+.imgMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 400px;
+  overflow: hidden;
+  border-radius: 4px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.imgs {
+  margin-top: 5px;
+  display: grid;
+  border-radius: 4px;
+
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 4px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

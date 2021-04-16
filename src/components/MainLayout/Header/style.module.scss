@@ -66,7 +66,7 @@
 
   .header2 {
     display: grid;
-    grid-template-columns: 1fr 1fr 8fr 1fr;
+    grid-template-columns: 1fr 8fr 1fr 1fr;
     align-items: center;
 
     .headerLogo {
@@ -83,7 +83,6 @@
       border-radius: 4px;
       display: flex;
       justify-content: space-between;
-      overflow: hidden;
       height: 35px;
 
       input {
@@ -98,6 +97,7 @@
         outline: none;
         border: none;
         cursor: pointer;
+        height: 110%;
 
         &:hover {
 

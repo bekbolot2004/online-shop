@@ -37,7 +37,6 @@ export default function Header() {
                                 <img src={logo} alt="logo"/>
                             </NavLink>
                         </div>
-                        <CategoryHeader/>
                         <label htmlFor="" className={style.search}>
                             <input type="text" placeholder={"Поиск..."} />
                             <button><img src={magnifier} alt="magnifier"/></button>
@@ -48,6 +47,8 @@ export default function Header() {
                                 <span className={style.count}>9</span>
                             </NavLink>
                         </div>
+                        <CategoryHeader/>
+
                     </div>
                 </Container>
             </div>

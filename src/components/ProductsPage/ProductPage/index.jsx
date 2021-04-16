@@ -8,111 +8,137 @@ import photo3 from './assets/photo_2021-04-07_19-36-41.jpg'
 import photo4 from './assets/photo_2021-04-07_19-36-43.jpg'
 import photo5 from './assets/photo_2021-04-07_19-36-45.jpg'
 import photo6 from './assets/photo_2021-04-07_19-36-46.jpg'
-import Slider from "react-slick";
 import './style.scss'
-import photoImg from "../../../objs/photo.png";
+import SliderPhoto from "./sliderPhoto";
+import line1 from './assets/line1.svg'
+import line2 from './assets/line2.svg'
 
 export const photoesObj = [
-  {
-    id: 1,
-    img: photo1
-  },
-  {
-    id: 2,
-    img: photo2
-  },
-  {
-    id: 3,
-    img: photo3
-  },
-  {
-    id: 4,
-    img: photo4
-  },
-  {
-    id: 5,
-    img: photo5
-  },
-  {
-    id: 6,
-    img: photo6
-  },
+    {
+        id: 1,
+        img: photo1
+    },
+    {
+        id: 2,
+        img: photo2
+    },
+    {
+        id: 3,
+        img: photo3
+    },
+    {
+        id: 4,
+        img: photo4
+    },
+    {
+        id: 5,
+        img: photo5
+    },
+    {
+        id: 6,
+        img: photo6
+    },
 ]
 
-export default function ProductPage({computedMatch: {params: {id}}}) {
-  const products = productsObj
-  const product = products.find(p => p.id === +id)
+const colors = {
+    "red": "#E84D4D",
+    "green": "#21B11E",
+    "yellow": "#DDE100",
+    "blue": "#4DB0E8",
+}
 
-  const [openModal, setOpenModal] = useState(false)
-  const [slider, setSlider] = useState(1)
+const ColorItemElement = ({name}) => {
+    const [input, setInput] = useState(1)
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
-  const PhotoElements = ({data}) => {
-    const handleClick = () => {
-      setSlider(+data.id)
-      alert(+data.id)
+    if (input === " " && input === 0){
+        setInput(0)
     }
+    if( input === " " && input === 0 && input === ""){
+        setInput(1)
+    }
+    const inputChange = (e) => {
+
+
+
+        setInput(e.target.value)
+    }
+    const inputAdd = (e) => {
+        if(input < 999){
+            setInput(+input + +1)
+        }
+    }
+    const inputMinus = (e) => {
+        if(input > 1){
+            setInput(+input - +1)
+        }
+    }
+
+
     return (
-      <div className={style.img} onClick={handleClick}>
-        <img src={data.img} alt="photo"/>
-      </div>
+        <div className={style.colorItem}>
+            <div className={style.blockColor} style={{background: colors[name]}}/>
+            <label style={{background: colors[name]}}>
+                <button onClick={inputMinus}><img src={line1} alt="img"/></button>
+                <input type="number" value={input} onChange={inputChange}/>
+                <button onClick={inputAdd}><img src={line2} alt="img"/></button>
+            </label>
+        </div>
     )
-  }
+}
 
-  const SliderElements = ({data}) => {
+
+export default function ProductPage({computedMatch: {params: {id}}}) {
+    const product = productsObj.find(p => p.id === +id)
+
+    const priceDis = product.price / 100 * product.discount
+
+
     return (
-      <div className={style.item}>
-        <img src={data.img} alt="photo"/>
-      </div>
+        <>
+            <MainLayout>
+                <div className={style.productPage}>
+                    <div className={style.photoImgs}>
+                        <div className={style.discount}>
+                            {product.discount ? <p>-{product.discount}%</p> : ""}
+                        </div>
+                        <div className={style.new}>
+                            {product.new ? <p>Новинка</p> : ""}
+                        </div>
+                        <p className={style.productName}>{product.name}</p>
+                        <SliderPhoto discount={product.discount} photoesObj={photoesObj}/>
+
+                        {/*<div className={style.imgMain}>*/}
+                        {/*  {photoesObj.filter(p => p.id === 1).map(p => <img src={p.img} alt="photo"/>)}*/}
+                        {/*</div>*/}
+                        {/*<div className={style.imgs}>*/}
+                        {/*  {photoesObj.filter(p => p.id > 1).map(p => <PhotoElements key={p.id} data={p}/>)}*/}
+                        {/*</div>*/}
+
+                    </div>
+                    <div className={style.productTxt}>
+                        <p className={style.articul}>Артикул: 22423</p>
+                        <div className={style.packaging}>
+                            <div className={style.packagingBlock}>
+                                <div className={style.packagingText}><p>В одной упаковке</p></div>
+                                <div className={style.packagingSize}>
+                                    {product.size.map(p => <div>{p}</div>)}
+                                </div>
+                            </div>
+                        </div>
+                        <div className={style.moneys}>
+                            {product.discount ?
+                                <p className={style.productPrice}>{priceDis} сом<span>{product.price} сом</span></p> :
+                                <p className={style.productPrice}>{product.price}</p>}
+                        </div>
+                        <div className={style.colorsCount}>
+                            <div className={style.colorsRow}>
+                                {product.colors.map(p => <ColorItemElement name={p}/>)}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </MainLayout>
+        </>
     )
-  }
-  const priceDis = product.price / 100 * product.discount
-
-  return (
-    <>
-      <MainLayout>
-        <div className={style.productPage}>
-          <div className={style.photoImgs}>
-            <div className={style.imgMain}>
-              {photoesObj.filter(p => p.id === 1).map(p => <img src={p.img} alt="photo"/>)}
-            </div>
-            <div className={style.imgs}>
-              {photoesObj.filter(p => p.id > 1).map(p => <PhotoElements key={p.id} data={p}/>)}
-            </div>
-          </div>
-          <div className={style.productTxt}>
-            <p className={style.productName}>{product.name}</p>
-
-            <div className={style.moneys}>
-              <div className={style.discount}>
-                {product.discount ? <p>-{product.discount}%</p> : ""}
-              </div>
-              {product.discount ? <p className={style.productPrice}>{priceDis} сом<span>{product.price} сом</span></p> :
-                <p className={style.productPrice}>{product.price}</p>}
-            </div>
-            <p>Размеры: {product.size.map(p => <>{p}, </>)}</p>
-            <p>Цвета: {product.colors.map(p => <>{p}, </>)}</p>
-            <p>Размеры: {product.new ? "Новый" : ""}</p>
-          </div>
-        </div>
-        <div className={style.modalBlock} style={{display: openModal ? "flex" : "none"}}>
-          <div className={style.closeModal} onClick={() => setOpenModal(false)}/>
-          <div className={style.modal}>
-            <div className={style.slider}>
-              <Slider{...settings} initialSlide={slider}>
-                {photoesObj.map(p => <SliderElements key={p.id} data={p}/>)}
-              </Slider>
-            </div>
-          </div>
-        </div>
-      </MainLayout>
-    </>
-  )
 }
