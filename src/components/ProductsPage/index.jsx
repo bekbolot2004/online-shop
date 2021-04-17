@@ -9,12 +9,8 @@ export default function ProductsPage({computedMatch: {params: {category, subcate
   const categories = categoriesObj
 
   return (
-    <>
+    <>  
       <MainLayout>
-        {category ? categories.filter(p => +p.id === +category).map(p => <p>{p.category}</p>) : "d"}
-        {category ? categories.filter(p => +p.subCategories.id === +subcategory).map(p =>
-          <p>{p.subCategories.subcategory}</p>) : "d"}
-
         <div className={style.products}>
           {category ? (subcategory ? productsObj.filter(p => +p.category === +category)
               .filter(p => +p.subcategory === +subcategory)
