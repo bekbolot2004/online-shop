@@ -4,6 +4,8 @@ import MainLayout from "../MainLayout";
 import SliderHome from "./Slider";
 import NewProducts from "./NewProducts";
 import {Breadcrumbs, Link, Typography} from "@material-ui/core";
+import Main from "./Main";
+import Adventages from "./Adventages";
 
 function handleClick(event) {
     event.preventDefault();
@@ -14,11 +16,13 @@ export default function Home() {
     return (
         <>
             <MainLayout>
-                <Breadcrumbs aria-label="breadcrumb">
-                    <Typography>Главная</Typography>
-                </Breadcrumbs>
+                <Main/>
+                {/*<Breadcrumbs aria-label="breadcrumb">*/}
+                {/*    <Typography>Главная</Typography>*/}
+                {/*</Breadcrumbs>*/}
                 <SliderHome/>
                 <NewProducts/>
+                <Adventages/>
             </MainLayout>
         </>
 

@@ -1,13 +1,13 @@
 .footerBlock {
   width: 100%;
-  background: #8855DD;
+  background: #e0e0e0;
   padding: 50px 0 10px 0;
   margin-top: 50px;
 
   .footer {
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #000000;
 
     .mapsSite{
       display: grid;
@@ -29,7 +29,7 @@
         flex-direction: column;
         font-weight: 300;
         a{
-          color: #fff;
+          color: #000000;
           margin: 5px 0;
         }
       }
@@ -40,11 +40,16 @@
       justify-content: center;
       align-content: center;
       margin: 15px 0;
+
+      p{
+        font-size: 24px;
+        text-transform: uppercase;
+      }
     }
 
     .security{
       text-align: center;
-      color: #fff;
+      color: #232323;
     }
   }
 }

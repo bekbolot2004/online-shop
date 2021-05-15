@@ -1,0 +1,43 @@
+.form {
+  padding: 30px 41px;
+  background: #E8E8E8;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+
+  div {
+    width: 100%;
+
+    input {
+      background: rgb(236, 236, 236);
+      border: 1px solid #000000;
+      outline: none;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      color: #3E3E3E;
+      font-weight: 500;
+      font-size: 18px;
+
+      &::placeholder {
+        color: #3E3E3E;
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .buttonSend{
+    button{
+      background: #000000;
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 10px 0;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
