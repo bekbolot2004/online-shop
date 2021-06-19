@@ -68,9 +68,11 @@
 
     .size {
       display: flex;
+      align-items: center;
 
       div{
-        border-right: 1px solid #000000;
+        //border-right: 1px solid #000000;
+        margin-left: 5px;
       }
     }
 
@@ -81,7 +83,7 @@
 
       p {
         padding: 0;
-        margin: 0;
+        margin: 0 0 0 5px;
       }
 
       //button {

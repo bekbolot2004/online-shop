@@ -1,7 +1,7 @@
 const initialState = {
     items: {},
     totalPrice: 0,
-    totalCount: 0,
+    totalItems: 0,
 };
 
 const getTotalPrice = (arr) => arr.reduce((sum, obj) => obj.price + sum, 0);
@@ -36,7 +36,7 @@ const cart = (state = initialState, action) => {
             const newItems = {
                 ...state.items,
                 [action.payload.id]: {
-                    items: currentProductsItems,
+                    item: currentProductsItems,
                     totalPrice: getTotalPrice(currentProductsItems),
                 },
             };
@@ -63,18 +63,15 @@ const cart = (state = initialState, action) => {
                 ...state,
                 items: newItems,
                 totalPrice: state.totalPrice - currentTotalPrice,
-                totalCount: state.totalCount - currentTotalCount,
+                totalItems: state.totalItems - currentTotalCount,
             };
         }
 
         case 'PLUS_CART_COUNT_COLOR': {
 
-            // const oldCount =
-            //
-            // console.log(action.payload)
-
             return {
-                ...state
+                ...state,
+                colors:[...state.colors,action.payload]
 
             };
         }

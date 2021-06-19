@@ -12,9 +12,9 @@ export const removeCartItem = (id) => ({
   payload: id,
 });
 
-export const plusCartCountColor = (id) => ({
+export const plusCartCountColor = (id,idColor) => ({
   type: 'PLUS_CART_COUNT_COLOR',
-  payload: id,
+  payload: [id,idColor]
 });
 
 export const minusCartCountColor = (id) => ({

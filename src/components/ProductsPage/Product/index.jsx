@@ -104,7 +104,7 @@ export default function Product({data, productBasket, onRemove, onClickAddProduc
                     </div>
                     <div className={style.size}>
                         <p>Размеры:</p>
-                        {data.size.map((p, index) => <div key={index}> {p.size}</div>)}
+                        {data.size.map((p, index) => <div key={index}> {p.size}.</div>)}
                     </div>
                     <div className={style.colors}>
                         Цвета:

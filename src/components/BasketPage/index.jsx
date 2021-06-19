@@ -6,19 +6,19 @@ import basketImg from './assets/basket.svg'
 import BasketForm from "./BasketForm";
 import {removeCartItem, plusCartCountColor} from "../../redux/actions/cart";
 
-const ProductCart = ({p, onRemove, }) => {
+const ProductCart = ({p, onRemove,}) => {
 
     const handleRemoveClick = () => {
         onRemove(p.id);
     };
 
 
-    const ColorElement = ({color, coun, plusCount}) => {
+    const ColorElement = ({color, coun, id, idColor}) => {
         const [count, setCount] = useState(coun)
         const dispatch = useDispatch()
 
-        const onAddCountColor = (id) => {
-            dispatch(plusCartCountColor(id));
+        const onAddCountColor = (id, count) => {
+            dispatch(plusCartCountColor(id, count));
         };
 
         const handleChangeInput = (e) => {
@@ -38,7 +38,7 @@ const ProductCart = ({p, onRemove, }) => {
             if (count < 10000) {
                 setCount(count + 1)
             }
-            onAddCountColor(count)
+            onAddCountColor(id)
         }
 
         return (
@@ -79,7 +79,8 @@ const ProductCart = ({p, onRemove, }) => {
             {/*    Цена упаковки*/}
             {/*</div>*/}
             <div className={style.colors}>
-                {p.colors.map((c, index) => <ColorElement key={index} color={c.color} coun={c.count} />)}
+                {p.colors.map((c, index) => <ColorElement key={index} color={c.color} coun={c.count} idColor={c.id}
+                                                          id={p.id}/>)}
             </div>
             <div className={style.count}>
                 Упаковки
@@ -109,8 +110,6 @@ export default function BasketPage() {
     const onRemoveItem = (id) => {
         dispatch(removeCartItem(id));
     };
-
-
 
 
     return (
@@ -160,7 +159,7 @@ export default function BasketPage() {
                         <div className={style.basketRow}>
                             {/*{}*/}
                             {addedProducts.map((p, index) => (
-                                <ProductCart key={index} p={p} onRemove={onRemoveItem} />
+                                <ProductCart key={index} p={p} onRemove={onRemoveItem}/>
                             ))}
                         </div>
                         {/*<div className={style.form}>*/}
